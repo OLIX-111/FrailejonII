@@ -1,0 +1,358 @@
+import Image from "next/image";
+import Link from "next/link";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ContactForm from "@/components/ContactForm";
+
+/* ── Datos ── */
+const modelos = [
+  { nombre: "Frailejón Golf Platinum", camas: 4, banos: 4, metros: 376, img: "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=700&q=80" },
+  { nombre: "Frailejón Standard Golf", camas: 3, banos: 3, metros: 250, img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80" },
+  { nombre: "Frailejón Golf Premium",  camas: 3, banos: 3, metros: 345, img: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?w=700&q=80" },
+];
+
+const atractivos = [
+  { nombre: "Capitan Kid",  tipo: "Restaurante (a 15 minutos)", img: "/capitan kid.jpeg" },
+  { nombre: "Hotel Hilton", tipo: "Hotel (a 15 minutos)",       img: "/Hilton.jpeg" },
+  { nombre: "Aeropuerto",   tipo: "Aeropuerto (a 5 minutos)",   img: "/aeropuerto.jpeg" },
+];
+
+const razones = [
+  {
+    icon: "📍",
+    titulo: "Ubicación Estratégica",
+    texto: "A solo 7 minutos del Aeropuerto Internacional de La Romana, con fácil acceso a las playas de Bayahibe, Isla Catalina e Isla Saona.",
+  },
+  {
+    icon: "★",
+    titulo: "Diseño de Clase Mundial",
+    texto: "Villas inspiradas en el minimalismo tropical, con techos altos, ventanales amplios y acabados de primera calidad como porcelanato y roble brasileño.",
+  },
+  {
+    icon: "📈",
+    titulo: "Inversión Inteligente",
+    texto: "Con potencial de plusvalía y oportunidades de renta vacacional, Frailejón Village es ideal para vivir o invertir.",
+  },
+];
+
+const amenidades = [
+  "Seguridad Integral 24/7",
+  "Club Social y Deportivo",
+  "Campos de Golf de Clase Mundial",
+  "Restaurantes Gourmet",
+  "Entorno Natural Exuberante",
+];
+
+/* ── Page ── */
+export default function Page() {
+  return (
+    <>
+      <Navbar />
+
+      {/* ── HERO ── */}
+      <section className="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
+        <video
+          src="/video de frailejon.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="relative z-10 max-w-6xl px-6">
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-8 drop-shadow-lg">
+            Descubre el Hogar<br />Donde Tus Sueños Cobran Vida
+          </h1>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <Link
+              href="#modelos"
+              className="bg-[#b5cc18] text-black font-bold px-8 py-3.5 rounded-md hover:bg-[#8fa012] transition-colors"
+            >
+              Explorar Modelos
+            </Link>
+            <Link
+              href="#contacto"
+              className="border-2 border-white text-white font-semibold px-8 py-3.5 rounded-md hover:bg-white/10 transition-colors"
+            >
+              Solicitar Más Información
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── INTRO QUOTE ── */}
+      <section className="bg-[#0d0d0d] py-24 px-6 text-center">
+        <p className="max-w-4xl mx-auto text-xl md:text-2xl font-semibold leading-relaxed">
+          Descubre una comunidad única de villas de lujo ubicadas en La Estancia Golf &amp; Country
+          Club, donde el diseño minimalista tropical y el entorno paradisíaco se combinan para
+          ofrecerte un estilo de vida incomparable.
+        </p>
+      </section>
+
+      {/* ── IMAGEN LA ESTANCIA ── */}
+      <div className="relative h-[500px] w-full">
+        <Image
+          src="/la estancia.jpeg"
+          alt="La Estancia Golf & Country Club"
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      {/* ── REFUGIO NATURAL ── */}
+      <section className="bg-[#161616] py-24 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">El proyecto</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-5 leading-snug">
+              Un Refugio Natural en La Estancia Golf &amp; Country Club
+            </h2>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              Ubicado en el corazón de la exclusiva comunidad de La Estancia, Frailejón Village ofrece
+              un entorno que fusiona naturaleza y sofisticación. Rodeado por la exuberante vegetación
+              de la región y con vistas panorámicas al majestuoso río Chavón, este destino es un
+              santuario para quienes buscan equilibrio entre el lujo y la tranquilidad.
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              La Estancia es más que un residencial, es una experiencia de vida que se complementa con
+              un campo de golf de clase mundial, senderos naturales y un ambiente diseñado para el
+              descanso absoluto.
+            </p>
+          </div>
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Ubicación</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-5 leading-snug">
+              Un Estilo de Vida Exclusivo con Conexión a Todo
+            </h2>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              Frailejón Village goza de una ubicación privilegiada a solo minutos de algunos de los
+              destinos más emblemáticos del Caribe. A pocos minutos del Aeropuerto Internacional de La
+              Romana, y con acceso a playas paradisíacas como Bayahibe e Isla Saona.
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              Además, la cercanía con Casa de Campo y el icónico Altos de Chavón brinda una oferta
+              cultural y gastronómica de primer nivel, asegurando que cada día esté lleno de nuevas
+              experiencias.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── IMAGEN LA ESTANCIA 2.0 ── */}
+      <div className="relative h-[500px] w-full">
+        <Image
+          src="/la estancia 2.0.jpeg"
+          alt="La Estancia Golf & Country Club"
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      {/* ── INVERSIÓN ── */}
+      <section className="bg-[#0d0d0d] py-24 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div className="relative h-[480px] rounded-xl overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=900&q=80"
+              alt="Villa Frailejón Village"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Inversión</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-5 leading-snug">
+              Una Inversión que Crece Contigo
+            </h2>
+            <p className="text-gray-400 leading-relaxed">
+              Ubicado en el exclusivo Estancia Golf &amp; Country Club, Frailejón Village redefine el
+              lujo en La Romana. Este proyecto residencial combina diseño minimalista tropical con
+              espacios amplios y amenidades premium para ofrecerte un estilo de vida inigualable en
+              armonía con la naturaleza.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ¿POR QUÉ ELEGIR? ── */}
+      <section className="bg-[#161616] py-24 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Ventajas</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-snug">
+              ¿Por Qué Elegir Frailejón Village?
+            </h2>
+            <p className="text-gray-400 leading-relaxed">
+              Descubre las razones que hacen de Frailejón Village el lugar ideal para vivir o invertir.
+            </p>
+          </div>
+          <div className="flex flex-col gap-8">
+            {razones.map((r) => (
+              <div key={r.titulo} className="flex gap-5 items-start">
+                <div className="w-12 h-12 min-w-12 bg-[#b5cc18] rounded-xl flex items-center justify-center text-xl text-black">
+                  {r.icon}
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-1">{r.titulo}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{r.texto}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── AMENIDADES ── */}
+      <section className="bg-[#0d0d0d] py-24 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Lo que incluye</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-snug">
+              Amenidades de Clase Mundial
+            </h2>
+            <ul className="space-y-4 mb-8">
+              {amenidades.map((a) => (
+                <li key={a} className="flex items-center gap-3 font-medium">
+                  <span className="w-7 h-7 min-w-7 rounded-full bg-[#b5cc18] text-black text-sm font-black flex items-center justify-center">
+                    ✓
+                  </span>
+                  {a}
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="#modelos"
+              className="inline-block border-2 border-[#b5cc18] text-[#b5cc18] font-bold px-7 py-3 rounded-full hover:bg-[#b5cc18] hover:text-black transition-colors"
+            >
+              Modelos del proyecto
+            </Link>
+          </div>
+          <div className="relative h-[460px] rounded-xl overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=80"
+              alt="Amenidades Frailejón Village"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── MODELOS ── */}
+      <section id="modelos" className="bg-[#161616] py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Catálogo</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">Modelos del proyecto</h2>
+            <p className="text-gray-400 max-w-xl mx-auto">
+              Villas con estilos y configuraciones variadas que se adaptan a tus necesidades,
+              priorizando elegancia y confort.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {modelos.map((m) => (
+              <div
+                key={m.nombre}
+                className="bg-[#1e1e1e] rounded-xl overflow-hidden group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
+              >
+                <div className="relative h-[220px] overflow-hidden">
+                  <Image
+                    src={m.img}
+                    alt={m.nombre}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <span className="absolute top-3 left-3 bg-[#b5cc18] text-black text-xs font-bold px-3 py-1 rounded-full">
+                    En venta
+                  </span>
+                </div>
+                <div className="p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="bg-[#b5cc18] text-black text-xs font-extrabold px-3 py-1 rounded-full">USD $</span>
+                    <span className="text-sm font-semibold">3,000 Para Reservar</span>
+                  </div>
+                  <h3 className="font-bold text-lg mb-3">{m.nombre}</h3>
+                  <div className="flex gap-4 text-gray-400 text-sm flex-wrap">
+                    <span>🛏 {m.camas}</span>
+                    <span>🛁 {m.banos}</span>
+                    <span>📐 {m.metros} m²</span>
+                    <span>📍 La Romana</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ATRACTIVOS CERCANOS ── */}
+      <section className="bg-[#0d0d0d] py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Alrededor</p>
+            <h2 className="text-3xl md:text-4xl font-bold">Atractivos Cerca de ti</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {atractivos.map((a) => (
+              <div key={a.nombre} className="relative h-[240px] rounded-xl overflow-hidden group">
+                <Image
+                  src={a.img}
+                  alt={a.nombre}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500 brightness-[0.6] saturate-150"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#4a7c00]/60 via-[#b5cc18]/25 via-50% to-transparent" />
+                <div className="absolute bottom-0 left-0 p-5">
+                  <h3 className="font-bold text-lg">{a.nombre}</h3>
+                  <p className="text-gray-300 text-sm">{a.tipo}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CONTACTO ── */}
+      <section id="contacto" className="bg-[#161616] py-24 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Agenda una visita</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-4 leading-snug">
+              Agenda tu Visita a Frailejón Village
+            </h2>
+            <p className="text-gray-400 mb-8">
+              Descubre en persona el lujo y la exclusividad que ofrecemos. Completa el formulario y
+              programa una cita con nuestro equipo.
+            </p>
+            <div className="space-y-3 mb-8 text-sm">
+              <div className="flex items-start gap-3">
+                <span className="text-[#b5cc18] text-lg mt-0.5">📞</span>
+                <span>(829) 222-2484</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-[#b5cc18] text-lg mt-0.5">✉</span>
+                <span>info@romanarealestate.com</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-[#b5cc18] text-lg mt-0.5">📌</span>
+                <span>Reparto Torres Calle 4ta #5. La Romana. República Dominicana.</span>
+              </div>
+            </div>
+            <ContactForm />
+          </div>
+          <div className="relative h-[580px] rounded-xl overflow-hidden hidden md:block">
+            <Image
+              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=80"
+              alt="Interior Frailejón Village"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  );
+}
