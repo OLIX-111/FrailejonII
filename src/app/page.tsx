@@ -6,7 +6,7 @@ import ContactForm from "@/components/ContactForm";
 
 /* ── Datos ── */
 const modelos = [
-  { nombre: "Frailejón Golf Platinum", camas: 4, banos: 4, metros: 376, img: "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=700&q=80" },
+  { nombre: "Frailejón Golf Platinum", camas: 4, banos: 4, metros: 376, img: "/render 1.png" },
   { nombre: "Frailejón Standard Golf", camas: 3, banos: 3, metros: 250, img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80" },
   { nombre: "Frailejón Golf Premium",  camas: 3, banos: 3, metros: 345, img: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?w=700&q=80" },
 ];
@@ -14,33 +14,34 @@ const modelos = [
 const atractivos = [
   { nombre: "Capitan Kid",  tipo: "Restaurante (a 15 minutos)", img: "/capitan kid.jpeg" },
   { nombre: "Hotel Hilton", tipo: "Hotel (a 15 minutos)",       img: "/Hilton.jpeg" },
-  { nombre: "Aeropuerto",   tipo: "Aeropuerto (a 5 minutos)",   img: "/aeropuerto.jpeg" },
+  { nombre: "Aeropuerto",   tipo: "Aeropuerto (a 6 minutos)",   img: "/aeropuerto.jpeg" },
 ];
 
 const razones = [
   {
     icon: "📍",
     titulo: "Ubicación Estratégica",
-    texto: "A solo 7 minutos del Aeropuerto Internacional de La Romana, con fácil acceso a las playas de Bayahibe, Isla Catalina e Isla Saona.",
+    texto: "A solo 6 minutos del Aeropuerto Internacional de La Romana y a 3 minutos de arenas blancas y aguas turquesas. Casa de Campo Resort & Villas a 6 minutos y Playa Dominicus Bayahibe a 19 minutos.",
   },
   {
-    icon: "★",
-    titulo: "Diseño de Clase Mundial",
-    texto: "Villas inspiradas en el minimalismo tropical, con techos altos, ventanales amplios y acabados de primera calidad como porcelanato y roble brasileño.",
+    icon: "⛳",
+    titulo: "Campo de Golf Pete Dye",
+    texto: "A 10 minutos, disfruta de un campo de golf de más de 7,300 m con 9 ó 18 hoyos en La Estancia, diseñado por Pete Dye — uno de los arquitectos de golf más reconocidos del mundo — con vistas al majestuoso Río Chavón.",
   },
   {
     icon: "📈",
     titulo: "Inversión Inteligente",
-    texto: "Con potencial de plusvalía y oportunidades de renta vacacional, Frailejón Village es ideal para vivir o invertir.",
+    texto: "Con modelo de negocio condominio, Frailejón Village asegura retorno de inversión a corto, mediano y largo plazo, respaldado por la alta demanda turística de La Romana y las amenidades de clase mundial de La Estancia.",
   },
 ];
 
 const amenidades = [
   "Seguridad Integral 24/7",
+  "Campo de Golf (9 y 18 hoyos – Pete Dye)",
+  "Terraza 19",
   "Club Social y Deportivo",
-  "Campos de Golf de Clase Mundial",
-  "Restaurantes Gourmet",
-  "Entorno Natural Exuberante",
+  "Cancha de Tennis",
+  "Museo de Tabaco",
 ];
 
 /* ── Page ── */
@@ -51,13 +52,11 @@ export default function Page() {
 
       {/* ── HERO ── */}
       <section className="relative min-h-screen flex items-center justify-center text-center overflow-hidden">
-        <video
-          src="/video de frailejon.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+        <iframe
+          src="https://www.youtube.com/embed/10dH0gY4dJY?autoplay=1&mute=1&loop=1&playlist=10dH0gY4dJY&controls=0&rel=0&modestbranding=1&playsinline=1"
+          allow="autoplay; encrypted-media"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-[177.78vh] h-[56.25vw]"
+          style={{ border: "none", pointerEvents: "none" }}
         />
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 max-w-6xl px-6">
@@ -286,6 +285,72 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ── PLAN DE PAGO ── */}
+      <section className="bg-[#0d0d0d] py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Financiamiento</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">Plan de Pago</h2>
+            <p className="text-gray-400 max-w-xl mx-auto">
+              ¡Reserva ahora y paga el inicial como tu bolsillo te lo permita!
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Etapa 1 */}
+            <div className="bg-[#1a1a1a] rounded-2xl p-8 border border-[#b5cc18]/30">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="bg-[#b5cc18] text-black text-xs font-extrabold px-3 py-1 rounded-full">ETAPA 1</span>
+                <span className="text-gray-400 text-sm">Entrega en 24 meses</span>
+              </div>
+              <ul className="space-y-5">
+                {[
+                  { paso: "Reserva", detalle: "US$ 3,000" },
+                  { paso: "10% – Firma del contrato", detalle: "30 días" },
+                  { paso: "30% – Durante construcción", detalle: "24 meses" },
+                  { paso: "60% – Contra entrega", detalle: "Al recibir la propiedad" },
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-4">
+                    <span className="w-7 h-7 min-w-7 rounded-full bg-[#b5cc18] text-black text-xs font-black flex items-center justify-center">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <p className="font-semibold">{item.paso}</p>
+                      <p className="text-gray-400 text-sm">{item.detalle}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Etapa 2 */}
+            <div className="bg-[#1a1a1a] rounded-2xl p-8 border border-white/10">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="bg-white/15 text-white text-xs font-extrabold px-3 py-1 rounded-full">ETAPA 2</span>
+                <span className="text-gray-400 text-sm">Entrega en 36 meses</span>
+              </div>
+              <ul className="space-y-5">
+                {[
+                  { paso: "Reserva", detalle: "US$ 3,000" },
+                  { paso: "10% – Firma del contrato", detalle: "30 días" },
+                  { paso: "30% – Durante construcción", detalle: "36 meses" },
+                  { paso: "60% – Contra entrega", detalle: "Al recibir la propiedad" },
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-4">
+                    <span className="w-7 h-7 min-w-7 rounded-full bg-white/20 text-white text-xs font-black flex items-center justify-center">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <p className="font-semibold">{item.paso}</p>
+                      <p className="text-gray-400 text-sm">{item.detalle}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <p className="text-center text-gray-500 text-xs mt-8">* Algunas condiciones aplican.</p>
+        </div>
+      </section>
+
       {/* ── ATRACTIVOS CERCANOS ── */}
       <section className="bg-[#0d0d0d] py-24 px-6">
         <div className="max-w-7xl mx-auto">
@@ -307,6 +372,33 @@ export default function Page() {
                   <h3 className="font-bold text-lg">{a.nombre}</h3>
                   <p className="text-gray-300 text-sm">{a.tipo}</p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PROXIMIDADES ── */}
+      <section className="bg-[#161616] py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Conectividad</p>
+            <h2 className="text-3xl md:text-4xl font-bold">A Minutos de Todo</h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { lugar: "Aeropuerto Int'l La Romana", tiempo: "6 min" },
+              { lugar: "Casa de Campo Resort & Villas", tiempo: "6 min" },
+              { lugar: "Playa Minitas", tiempo: "14 min" },
+              { lugar: "Terminal de Cruceros", tiempo: "14 min" },
+              { lugar: "Playa Dominicus – Bayahibe", tiempo: "19 min" },
+              { lugar: "Playa Caleta", tiempo: "25 min" },
+              { lugar: "Jumbo (Supermercado)", tiempo: "13 min" },
+              { lugar: "Aeropuerto Int'l Punta Cana", tiempo: "45 min" },
+            ].map((p) => (
+              <div key={p.lugar} className="bg-[#1e1e1e] rounded-xl p-5 flex flex-col gap-1">
+                <span className="text-[#b5cc18] text-2xl font-extrabold">{p.tiempo}</span>
+                <span className="text-gray-300 text-sm leading-snug">{p.lugar}</span>
               </div>
             ))}
           </div>
