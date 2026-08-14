@@ -178,7 +178,7 @@ export default function Page() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="relative h-[480px] rounded-xl overflow-hidden">
             <Image
-              src="/frailejonplatinum.jpg"
+              src="/vista aerea.png"
               alt="Villa Frailejón Village"
               fill
               className="object-cover"
