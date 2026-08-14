@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import Slideshow from "@/components/Slideshow";
 
 /* ── Datos ── */
 const modelos = [
@@ -21,7 +22,7 @@ const modelos = [
     camas: 2,
     banos: 2,
     metros: "85 m²",
-    img: "https://grupo-chavon2.odoo.com/web/image/ir.attachment/75832",
+    img: "/atardecer.png",
     descripcion: "Estacionamiento para un vehículo, vestíbulo de entrada, sala de estar, comedor, cocina modular moderna y de alta calidad, habitaciones con baño y vestidor (WC), baño de visitas y área de servicio.",
   },
   {
@@ -30,7 +31,7 @@ const modelos = [
     camas: 3,
     banos: 3,
     metros: "70–85 m² + Terraza 90 m²",
-    img: "https://grupo-chavon2.odoo.com/web/image/ir.attachment/75833",
+    img: "/Frailejon 8.png",
     descripcion: "1er Nivel: Estacionamiento, patio, vestíbulo, sala de estar, estudio, comedor, baño de visita. 2do Nivel: 4 habitaciones, terraza, cocina, gazebo, piscina, jardín y áreas verdes.",
   },
 ];
@@ -177,7 +178,7 @@ export default function Page() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="relative h-[480px] rounded-xl overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=900&q=80"
+              src="/frailejonplatinum.jpg"
               alt="Villa Frailejón Village"
               fill
               className="object-cover"
@@ -253,7 +254,7 @@ export default function Page() {
           </div>
           <div className="relative h-[460px] rounded-xl overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=80"
+              src="/amenidadesfrailejon.jpg"
               alt="Amenidades Frailejón Village"
               fill
               className="object-cover"
@@ -462,14 +463,7 @@ export default function Page() {
             </div>
             <ContactForm />
           </div>
-          <div className="relative h-[580px] rounded-xl overflow-hidden hidden md:block">
-            <Image
-              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=80"
-              alt="Interior Frailejón Village"
-              fill
-              className="object-cover"
-            />
-          </div>
+          <Slideshow />
         </div>
       </section>
 
