@@ -6,9 +6,33 @@ import ContactForm from "@/components/ContactForm";
 
 /* ── Datos ── */
 const modelos = [
-  { nombre: "Frailejón Golf Platinum", camas: 4, banos: 4, metros: 376, img: "/render 1.png" },
-  { nombre: "Frailejón Standard Golf", camas: 3, banos: 3, metros: 250, img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80" },
-  { nombre: "Frailejón Golf Premium",  camas: 3, banos: 3, metros: 345, img: "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?w=700&q=80" },
+  {
+    nivel: 1,
+    tipo: "Apartamento",
+    camas: 1,
+    banos: 2,
+    metros: "70 m²",
+    img: "/render 1.png",
+    descripcion: "Estacionamiento para un vehículo, recibidor, sala de estar, comedor, cocina modular moderna de alta calidad, habitaciones con baño y vestidor (WC), baño de visitas y área de servicio.",
+  },
+  {
+    nivel: 2,
+    tipo: "Apartamento",
+    camas: 2,
+    banos: 2,
+    metros: "85 m²",
+    img: "https://grupo-chavon2.odoo.com/web/image/ir.attachment/75832",
+    descripcion: "Estacionamiento para un vehículo, vestíbulo de entrada, sala de estar, comedor, cocina modular moderna y de alta calidad, habitaciones con baño y vestidor (WC), baño de visitas y área de servicio.",
+  },
+  {
+    nivel: 3,
+    tipo: "Apartamento · Terraza",
+    camas: 3,
+    banos: 3,
+    metros: "70–85 m² + Terraza 90 m²",
+    img: "https://grupo-chavon2.odoo.com/web/image/ir.attachment/75833",
+    descripcion: "1er Nivel: Estacionamiento, patio, vestíbulo, sala de estar, estudio, comedor, baño de visita. 2do Nivel: 4 habitaciones, terraza, cocina, gazebo, piscina, jardín y áreas verdes.",
+  },
 ];
 
 const atractivos = [
@@ -252,13 +276,13 @@ export default function Page() {
           <div className="grid md:grid-cols-3 gap-6">
             {modelos.map((m) => (
               <div
-                key={m.nombre}
+                key={m.nivel}
                 className="bg-[#1e1e1e] rounded-xl overflow-hidden group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
               >
                 <div className="relative h-[220px] overflow-hidden">
                   <Image
                     src={m.img}
-                    alt={m.nombre}
+                    alt={`Modelo Altos de Frailejón Nivel ${m.nivel}`}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -271,13 +295,18 @@ export default function Page() {
                     <span className="bg-[#b5cc18] text-black text-xs font-extrabold px-3 py-1 rounded-full">USD $</span>
                     <span className="text-sm font-semibold">3,000 Para Reservar</span>
                   </div>
-                  <h3 className="font-bold text-lg mb-3">{m.nombre}</h3>
-                  <div className="flex gap-4 text-gray-400 text-sm flex-wrap">
-                    <span>🛏 {m.camas}</span>
-                    <span>🛁 {m.banos}</span>
-                    <span>📐 {m.metros} m²</span>
-                    <span>📍 La Romana</span>
+                  <h3 className="font-bold text-base mb-1">
+                    Modelo Altos de Frailejón{" "}
+                    <span className="text-[#b5cc18]">· Nivel {m.nivel}</span>
+                  </h3>
+                  <p className="text-xs text-gray-500 mb-3">{m.tipo}</p>
+                  <div className="flex gap-3 text-gray-400 text-sm flex-wrap mb-3">
+                    <span>🛏 {m.camas} hab.</span>
+                    <span>🛁 {m.banos} baños</span>
+                    <span>📐 {m.metros}</span>
                   </div>
+                  <p className="text-gray-400 text-xs leading-relaxed mb-2">{m.descripcion}</p>
+                  <p className="text-[#b5cc18] text-xs font-semibold">🌿 Vistas Área Verde</p>
                 </div>
               </div>
             ))}
