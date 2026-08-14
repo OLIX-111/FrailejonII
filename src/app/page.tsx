@@ -254,7 +254,7 @@ export default function Page() {
           </div>
           <div className="relative h-[460px] rounded-xl overflow-hidden">
             <Image
-              src="/amenidadesfrailejon.jpg"
+              src="/Terraza.png"
               alt="Amenidades Frailejón Village"
               fill
               className="object-cover"
