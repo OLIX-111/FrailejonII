@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState } from "react";
 
 const proyectos = [
-  { label: "Frailejón II",           href: "https://frailejon-ii.vercel.app/" },
   { label: "Frailejón Village",      href: "https://frailejon-village.vercel.app/" },
   { label: "Costa Mar",              href: "https://costa-mar-1.vercel.app/" },
   { label: "Stone Towers III",       href: "https://stonetowers-iii.vercel.app/" },
