@@ -1,30 +1,95 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
+
+const proyectos = [
+  { label: "Frailejón II",           href: "https://frailejon-ii.vercel.app/" },
+  { label: "Frailejón Village",      href: "https://frailejon-village.vercel.app/" },
+  { label: "Costa Mar",              href: "https://costa-mar-1.vercel.app/" },
+  { label: "Stone Towers III",       href: "https://stonetowers-iii.vercel.app/" },
+  { label: "Portal de Propiedades",  href: "https://propiedades.lromanarealestate.com/" },
+];
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 h-[70px] flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-[110px] flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
             src="/Lromana con COLOR) (1).png"
             alt="La Romana Real Estate"
-            width={160}
-            height={48}
+            width={220}
+            height={100}
             className="object-contain"
             priority
           />
         </Link>
 
         <ul className="hidden md:flex items-center gap-7">
-          {["Proyectos ▾", "Propiedades", "Agentes", "Sobre Nosotros", "Contacto"].map((item) => (
-            <li key={item}>
-              <Link href="#" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
-                {item}
-              </Link>
-            </li>
-          ))}
+          {/* Proyectos dropdown */}
+          <li
+            className="relative"
+            onMouseEnter={() => setOpen(true)}
+            onMouseLeave={() => setOpen(false)}
+          >
+            <span className="text-sm font-medium text-gray-700 hover:text-blue-600 cursor-pointer transition-colors">
+              Proyectos ▾
+            </span>
+            {open && (
+              <div className="absolute top-full left-0 mt-3 bg-white shadow-lg rounded-xl py-2 min-w-[210px] z-50">
+                {proyectos.map((p) => (
+                  <a
+                    key={p.href}
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                  >
+                    {p.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </li>
+
+          <li>
+            <a
+              href="https://propiedades.lromanarealestate.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Propiedades
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://lromanarealestate.com/agentes"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Agentes
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.lromanarealestate.com/about"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Sobre Nosotros
+            </a>
+          </li>
+          <li>
+            <Link href="#contacto" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+              Contacto
+            </Link>
+          </li>
           <li>
             <Link
               href="#contacto"

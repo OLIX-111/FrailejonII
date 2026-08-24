@@ -5,10 +5,15 @@
   .fv-nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; height: 110px; display: flex; align-items: center; justify-content: space-between; }
   .fv-nav-logo img { height: 100px; width: auto; display: block; object-fit: contain; }
   .fv-nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; }
-  .fv-nav-links a { font-size: 0.875rem; font-weight: 500; color: #374151; text-decoration: none; }
+  .fv-nav-links > li { position: relative; }
+  .fv-nav-links a { font-size: 0.875rem; font-weight: 500; color: #374151; text-decoration: none; white-space: nowrap; }
   .fv-nav-links a:hover { color: #2563eb; }
-  .fv-nav-cta { background: #2563eb; color: #fff; font-size: 0.875rem; font-weight: 600; padding: 0.6rem 1.25rem; border-radius: 9999px; text-decoration: none; }
-  .fv-nav-cta:hover { background: #1d4ed8; }
+  .fv-nav-cta { background: #2563eb; color: #fff !important; font-size: 0.875rem; font-weight: 600; padding: 0.6rem 1.25rem; border-radius: 9999px; text-decoration: none; }
+  .fv-nav-cta:hover { background: #1d4ed8; color: #fff !important; }
+  .fv-dropdown-menu { display: none; position: absolute; top: calc(100% + 12px); left: 0; background: #fff; box-shadow: 0 8px 24px rgba(0,0,0,0.12); border-radius: 10px; padding: 0.5rem 0; min-width: 210px; z-index: 200; }
+  .fv-dropdown-menu a { display: block; padding: 0.6rem 1.1rem; font-size: 0.85rem; color: #374151; text-decoration: none; border-radius: 0; }
+  .fv-dropdown-menu a:hover { background: #f3f4f6; color: #2563eb; }
+  .fv-nav-links > li:hover .fv-dropdown-menu { display: block; }
   @media(max-width: 768px) { .fv-nav-links { display: none; } }
   .fv-nav + .fv-hero { padding-top: 0; }
 
@@ -139,11 +144,20 @@
       <img src="https://frailejon-ii.vercel.app/Lromana%20con%20COLOR)%20(1).png" alt="La Romana Real Estate">
     </a>
     <ul class="fv-nav-links">
-      <li><a href="#">Proyectos ▾</a></li>
-      <li><a href="#">Propiedades</a></li>
-      <li><a href="#">Agentes</a></li>
-      <li><a href="#">Sobre Nosotros</a></li>
-      <li><a href="#">Contacto</a></li>
+      <li>
+        <a href="#">Proyectos ▾</a>
+        <div class="fv-dropdown-menu">
+          <a href="https://frailejon-ii.vercel.app/" target="_blank">Frailejón II</a>
+          <a href="https://frailejon-village.vercel.app/" target="_blank">Frailejón Village</a>
+          <a href="https://costa-mar-1.vercel.app/" target="_blank">Costa Mar</a>
+          <a href="https://stonetowers-iii.vercel.app/" target="_blank">Stone Towers III</a>
+          <a href="https://propiedades.lromanarealestate.com/" target="_blank">Portal de Propiedades</a>
+        </div>
+      </li>
+      <li><a href="https://propiedades.lromanarealestate.com/" target="_blank">Propiedades</a></li>
+      <li><a href="https://lromanarealestate.com/agentes" target="_blank">Agentes</a></li>
+      <li><a href="https://www.lromanarealestate.com/about" target="_blank">Sobre Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
       <li><a href="#contacto" class="fv-nav-cta">Empezar Búsqueda</a></li>
     </ul>
   </div>
