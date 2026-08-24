@@ -454,7 +454,7 @@ export default function Page() {
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-[#b5cc18] text-lg mt-0.5">✉</span>
-                <span>info@romanarealestate.com</span>
+                <span>info@lromanarealestate.com</span>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-[#b5cc18] text-lg mt-0.5">📌</span>
