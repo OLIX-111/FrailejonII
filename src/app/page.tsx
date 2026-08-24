@@ -174,9 +174,9 @@ export default function Page() {
       </div>
 
       {/* ── INVERSIÓN ── */}
-      <section className="bg-[#0d0d0d] py-24 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div className="relative h-[480px] rounded-xl overflow-hidden">
+      <section className="bg-[#0d0d0d] overflow-hidden mt-16 md:mt-24">
+        <div className="grid md:grid-cols-2">
+          <div className="relative h-[360px] md:h-auto md:min-h-[540px]">
             <Image
               src="/vista aerea.png"
               alt="Villa Frailejón Village"
@@ -184,7 +184,7 @@ export default function Page() {
               className="object-cover"
             />
           </div>
-          <div>
+          <div className="py-20 px-8 md:px-14 lg:px-20 flex flex-col justify-center">
             <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Inversión</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-5 leading-snug">
               Una Inversión que Crece Contigo
@@ -228,9 +228,9 @@ export default function Page() {
       </section>
 
       {/* ── AMENIDADES ── */}
-      <section className="bg-[#0d0d0d] py-24 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div>
+      <section className="bg-[#0d0d0d] overflow-hidden">
+        <div className="grid md:grid-cols-2">
+          <div className="py-20 px-8 md:px-14 lg:px-20 flex flex-col justify-center">
             <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Lo que incluye</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-snug">
               Amenidades de Clase Mundial
@@ -252,7 +252,7 @@ export default function Page() {
               Modelos del proyecto
             </Link>
           </div>
-          <div className="relative h-[460px] rounded-xl overflow-hidden">
+          <div className="relative h-[360px] md:h-auto md:min-h-[540px]">
             <Image
               src="/Terraza.png"
               alt="Amenidades Frailejón Village"
@@ -264,8 +264,8 @@ export default function Page() {
       </section>
 
       {/* ── MODELOS ── */}
-      <section id="modelos" className="bg-[#161616] py-24 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section id="modelos" className="bg-[#161616] pt-24 pb-40">
+        <div className="w-full">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Catálogo</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-3">Modelos del proyecto</h2>
@@ -278,7 +278,7 @@ export default function Page() {
             {modelos.map((m) => (
               <div
                 key={m.nivel}
-                className="bg-[#1e1e1e] rounded-xl overflow-hidden group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
+                className="bg-[#1e1e1e] overflow-hidden group hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
               >
                 <div className="relative h-[220px] overflow-hidden">
                   <Image
@@ -316,8 +316,8 @@ export default function Page() {
       </section>
 
       {/* ── PLAN DE PAGO ── */}
-      <section className="bg-[#0d0d0d] py-24 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="bg-[#0d0d0d] py-24">
+        <div className="w-full">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Financiamiento</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-3">Plan de Pago</h2>
@@ -325,7 +325,7 @@ export default function Page() {
               ¡Reserva ahora y paga el inicial como tu bolsillo te lo permita!
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6">
             {/* Etapa 1 */}
             <div className="bg-[#1a1a1a] rounded-2xl p-8 border border-[#b5cc18]/30">
               <div className="flex items-center gap-3 mb-6">
@@ -382,15 +382,15 @@ export default function Page() {
       </section>
 
       {/* ── ATRACTIVOS CERCANOS ── */}
-      <section className="bg-[#0d0d0d] py-24 px-6">
-        <div className="max-w-7xl mx-auto">
+      <section className="bg-[#0d0d0d] py-24">
+        <div className="w-full">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Alrededor</p>
             <h2 className="text-3xl md:text-4xl font-bold">Atractivos Cerca de ti</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {atractivos.map((a) => (
-              <div key={a.nombre} className="relative h-[240px] rounded-xl overflow-hidden group">
+              <div key={a.nombre} className="relative h-[420px] overflow-hidden group">
                 <Image
                   src={a.img}
                   alt={a.nombre}
@@ -436,9 +436,9 @@ export default function Page() {
       </section>
 
       {/* ── CONTACTO ── */}
-      <section id="contacto" className="bg-[#161616] py-24 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
-          <div>
+      <section id="contacto" className="bg-[#161616] overflow-hidden">
+        <div className="grid md:grid-cols-2">
+          <div className="py-20 px-8 md:px-14 lg:px-20">
             <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Agenda una visita</p>
             <h2 className="text-3xl md:text-4xl font-extrabold mb-4 leading-snug">
               Agenda tu Visita a Frailejón Village

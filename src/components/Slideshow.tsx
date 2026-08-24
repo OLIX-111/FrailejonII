@@ -8,9 +8,6 @@ const imagenes = [
   { src: "/Frailejon 8.png",     alt: "Frailejón Village" },
   { src: "/la estancia.jpeg",    alt: "La Estancia Golf & Country Club" },
   { src: "/la estancia 2.0.jpeg", alt: "La Estancia" },
-  { src: "/capitan kid.jpeg",    alt: "Capitan Kid" },
-  { src: "/Hilton.jpeg",         alt: "Hotel Hilton" },
-  { src: "/aeropuerto.jpeg",     alt: "Aeropuerto La Romana" },
 ];
 
 export default function Slideshow() {
@@ -24,7 +21,7 @@ export default function Slideshow() {
   }, []);
 
   return (
-    <div className="relative h-[580px] rounded-xl overflow-hidden hidden md:block">
+    <div className="relative h-full min-h-[580px] overflow-hidden hidden md:block">
       {imagenes.map((img, i) => (
         <div
           key={img.src}
