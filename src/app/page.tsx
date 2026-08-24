@@ -200,9 +200,9 @@ export default function Page() {
       </section>
 
       {/* ── ¿POR QUÉ ELEGIR? ── */}
-      <section className="bg-[#161616] py-24 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-start">
-          <div>
+      <section className="bg-[#161616] py-24">
+        <div className="grid md:grid-cols-2">
+          <div className="px-8 md:px-14 lg:px-20 flex flex-col justify-center">
             <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Ventajas</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-snug">
               ¿Por Qué Elegir Frailejón Village?
@@ -211,7 +211,7 @@ export default function Page() {
               Descubre las razones que hacen de Frailejón Village el lugar ideal para vivir o invertir.
             </p>
           </div>
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-8 px-8 md:px-14 lg:px-20">
             {razones.map((r) => (
               <div key={r.titulo} className="flex gap-5 items-start">
                 <div className="w-20 h-20 min-w-20 bg-[#b5cc18] flex items-center justify-center text-4xl text-black">
