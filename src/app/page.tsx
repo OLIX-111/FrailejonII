@@ -214,7 +214,7 @@ export default function Page() {
           <div className="flex flex-col gap-8">
             {razones.map((r) => (
               <div key={r.titulo} className="flex gap-5 items-start">
-                <div className="w-12 h-12 min-w-12 bg-[#b5cc18] rounded-xl flex items-center justify-center text-xl text-black">
+                <div className="w-20 h-20 min-w-20 bg-[#b5cc18] rounded-2xl flex items-center justify-center text-4xl text-black">
                   {r.icon}
                 </div>
                 <div>
