@@ -409,13 +409,13 @@ export default function Page() {
       </section>
 
       {/* ── PROXIMIDADES ── */}
-      <section className="bg-[#161616] py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
+      <section className="bg-[#161616] py-24">
+        <div className="w-full">
+          <div className="text-center mb-12 px-6">
             <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Conectividad</p>
-            <h2 className="text-3xl md:text-4xl font-bold">A Minutos de Todo</h2>
+            <h2 className="text-5xl md:text-7xl font-bold">A Minutos de Todo</h2>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { lugar: "Aeropuerto Int'l La Romana", tiempo: "6 min" },
               { lugar: "Casa de Campo Resort & Villas", tiempo: "6 min" },
@@ -426,9 +426,9 @@ export default function Page() {
               { lugar: "Jumbo (Supermercado)", tiempo: "13 min" },
               { lugar: "Aeropuerto Int'l Punta Cana", tiempo: "45 min" },
             ].map((p) => (
-              <div key={p.lugar} className="bg-[#1e1e1e] rounded-xl p-5 flex flex-col gap-1">
-                <span className="text-[#b5cc18] text-2xl font-extrabold">{p.tiempo}</span>
-                <span className="text-gray-300 text-sm leading-snug">{p.lugar}</span>
+              <div key={p.lugar} className="bg-[#1e1e1e] rounded-xl p-8 flex flex-col gap-2">
+                <span className="text-[#b5cc18] text-4xl font-extrabold">{p.tiempo}</span>
+                <span className="text-gray-300 text-base leading-snug">{p.lugar}</span>
               </div>
             ))}
           </div>
