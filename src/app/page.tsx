@@ -268,7 +268,7 @@ export default function Page() {
         <div className="w-full">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Catálogo</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-3">Modelos del proyecto</h2>
+            <h2 className="text-5xl md:text-7xl font-bold mb-3">Modelos del proyecto</h2>
             <p className="text-gray-400 max-w-xl mx-auto">
               Villas con estilos y configuraciones variadas que se adaptan a tus necesidades,
               priorizando elegancia y confort.
@@ -320,7 +320,7 @@ export default function Page() {
         <div className="w-full">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Financiamiento</p>
-            <h2 className="text-3xl md:text-4xl font-bold mb-3">Plan de Pago</h2>
+            <h2 className="text-5xl md:text-7xl font-bold mb-3">Plan de Pago</h2>
             <p className="text-gray-400 max-w-xl mx-auto">
               ¡Reserva ahora y paga el inicial como tu bolsillo te lo permita!
             </p>
@@ -386,7 +386,7 @@ export default function Page() {
         <div className="w-full">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-[3px] text-[#b5cc18] mb-3">Alrededor</p>
-            <h2 className="text-3xl md:text-4xl font-bold">Atractivos Cerca de ti</h2>
+            <h2 className="text-5xl md:text-7xl font-bold">Atractivos Cerca de ti</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {atractivos.map((a) => (
