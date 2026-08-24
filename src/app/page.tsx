@@ -450,7 +450,7 @@ export default function Page() {
             <div className="space-y-3 mb-8 text-sm">
               <div className="flex items-start gap-3">
                 <span className="text-[#b5cc18] text-lg mt-0.5">📞</span>
-                <span>(829) 222-2484</span>
+                <span>+1 (484) 473-1113</span>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-[#b5cc18] text-lg mt-0.5">✉</span>
