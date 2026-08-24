@@ -174,7 +174,7 @@ export default function Page() {
       </div>
 
       {/* ── INVERSIÓN ── */}
-      <section className="bg-[#0d0d0d] overflow-hidden mt-16 md:mt-24">
+      <section className="bg-[#0d0d0d] overflow-hidden">
         <div className="grid md:grid-cols-2">
           <div className="relative h-[360px] md:h-auto md:min-h-[540px]">
             <Image
