@@ -1,14 +1,20 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-6 h-[70px] flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-blue-600 text-lg leading-none">●</span>
-          <span className="font-black text-xl text-gray-900 tracking-tight">ROMANA</span>
-          <span className="text-[10px] text-gray-400 font-normal uppercase tracking-widest">Real Estate</span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/Lromana con COLOR) (1).png"
+            alt="La Romana Real Estate"
+            width={160}
+            height={48}
+            className="object-contain"
+            priority
+          />
         </Link>
 
         <ul className="hidden md:flex items-center gap-7">

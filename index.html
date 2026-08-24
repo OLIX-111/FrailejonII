@@ -1,6 +1,17 @@
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
+  .fv-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .fv-nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; height: 70px; display: flex; align-items: center; justify-content: space-between; }
+  .fv-nav-logo img { height: 48px; width: auto; display: block; object-fit: contain; }
+  .fv-nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; }
+  .fv-nav-links a { font-size: 0.875rem; font-weight: 500; color: #374151; text-decoration: none; }
+  .fv-nav-links a:hover { color: #2563eb; }
+  .fv-nav-cta { background: #2563eb; color: #fff; font-size: 0.875rem; font-weight: 600; padding: 0.6rem 1.25rem; border-radius: 9999px; text-decoration: none; }
+  .fv-nav-cta:hover { background: #1d4ed8; }
+  @media(max-width: 768px) { .fv-nav-links { display: none; } }
+  .fv-nav + .fv-hero { padding-top: 0; }
+
   .fv-section { padding: 6rem 1.5rem; }
   .fv-container { max-width: 1280px; margin: 0 auto; }
   .fv-bg1 { background: #0d0d0d; color: #fff; }
@@ -11,7 +22,7 @@
 
   .fv-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
   .fv-grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .fv-grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .fv-grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
   @media(max-width: 768px) {
     .fv-grid2, .fv-grid3 { grid-template-columns: 1fr; }
     .fv-grid4 { grid-template-columns: repeat(2, 1fr); }
@@ -44,7 +55,7 @@
 
   .fv-razones { display: flex; flex-direction: column; gap: 2rem; }
   .fv-razon { display: flex; gap: 1.25rem; align-items: flex-start; }
-  .fv-razon-icon { width: 80px; height: 80px; min-width: 80px; background: #b5cc18; border-radius: 0; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: #000; }
+  .fv-razon-icon { width: 48px; height: 48px; min-width: 48px; background: #b5cc18; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: #000; }
   .fv-razon h3 { font-weight: 700; font-size: 1rem; margin-bottom: 0.3rem; color: #fff; }
   .fv-razon p { color: #9ca3af; font-size: 0.875rem; line-height: 1.6; }
 
@@ -63,7 +74,7 @@
   .fv-card-body h3 { font-weight: 700; font-size: 1rem; margin-bottom: 0.25rem; color: #fff; }
   .fv-card-specs { display: flex; gap: 1rem; color: #9ca3af; font-size: 0.8rem; flex-wrap: wrap; }
 
-  .fv-plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .fv-plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 900px; margin: 0 auto; }
   @media(max-width: 768px) { .fv-plan-grid { grid-template-columns: 1fr; } }
   .fv-plan-card { background: #1a1a1a; border-radius: 16px; padding: 2rem; }
   .fv-plan-card.active { border: 1px solid rgba(181,204,24,0.3); }
@@ -81,16 +92,16 @@
   .fv-plan-item small { color: #9ca3af; font-size: 0.8rem; }
   .fv-plan-note { text-align: center; color: #6b7280; font-size: 0.75rem; margin-top: 2rem; }
 
-  .fv-atractivo { position: relative; height: 420px; overflow: hidden; }
+  .fv-atractivo { position: relative; height: 240px; overflow: hidden; }
   .fv-atractivo img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.6) saturate(1.5); }
   .fv-atractivo-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(74,124,0,0.6) 0%, rgba(181,204,24,0.25) 50%, transparent 100%); }
   .fv-atractivo-info { position: absolute; bottom: 0; left: 0; padding: 1.25rem; }
   .fv-atractivo-info h3 { font-weight: 700; font-size: 1rem; color: #fff; margin: 0 0 0.2rem; }
   .fv-atractivo-info p { color: #d1d5db; font-size: 0.8rem; margin: 0; }
 
-  .fv-prox-card { background: #1e1e1e; border-radius: 12px; padding: 2rem; }
-  .fv-prox-card .tiempo { color: #b5cc18; font-size: 2.5rem; font-weight: 900; display: block; }
-  .fv-prox-card .lugar { color: #d1d5db; font-size: 1rem; line-height: 1.4; display: block; margin-top: 0.5rem; }
+  .fv-prox-card { background: #1e1e1e; border-radius: 12px; padding: 1.25rem; }
+  .fv-prox-card .tiempo { color: #b5cc18; font-size: 1.5rem; font-weight: 900; display: block; }
+  .fv-prox-card .lugar { color: #d1d5db; font-size: 0.8rem; line-height: 1.4; display: block; margin-top: 0.25rem; }
 
   .fv-contact-info { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; font-size: 0.875rem; color: #fff; }
   .fv-contact-row { display: flex; align-items: flex-start; gap: 0.75rem; }
@@ -101,21 +112,42 @@
   .fv-form button { background: #b5cc18; color: #000; font-weight: 700; padding: 0.85rem; border-radius: 8px; border: none; cursor: pointer; font-size: 1rem; width: 100%; }
 
   .fv-slideshow { position: relative; overflow: hidden; min-height: 580px; }
-  .fv-slide { position: absolute; inset: 0; opacity: 0; animation: fv-cycle 17.5s linear infinite; }
+  .fv-slide { position: absolute; inset: 0; opacity: 0; animation: fv-cycle 28s linear infinite; }
   .fv-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
   @keyframes fv-cycle {
-    0%   { opacity: 0; }
-    2%   { opacity: 1; }
-    20%  { opacity: 1; }
-    24%  { opacity: 0; }
-    100% { opacity: 0; }
+    0%     { opacity: 0; }
+    2%     { opacity: 1; }
+    12.5%  { opacity: 1; }
+    15%    { opacity: 0; }
+    100%   { opacity: 0; }
   }
-  .fv-slideshow .fv-slide:nth-child(1) { animation-delay:     0s; }
-  .fv-slideshow .fv-slide:nth-child(2) { animation-delay:   -14s; }
-  .fv-slideshow .fv-slide:nth-child(3) { animation-delay: -10.5s; }
-  .fv-slideshow .fv-slide:nth-child(4) { animation-delay:    -7s; }
-  .fv-slideshow .fv-slide:nth-child(5) { animation-delay:  -3.5s; }
+  .fv-slideshow .fv-slide:nth-child(1) { animation-delay:    0s; }
+  .fv-slideshow .fv-slide:nth-child(2) { animation-delay: -24.5s; }
+  .fv-slideshow .fv-slide:nth-child(3) { animation-delay:  -21s; }
+  .fv-slideshow .fv-slide:nth-child(4) { animation-delay: -17.5s; }
+  .fv-slideshow .fv-slide:nth-child(5) { animation-delay:  -14s; }
+  .fv-slideshow .fv-slide:nth-child(6) { animation-delay: -10.5s; }
+  .fv-slideshow .fv-slide:nth-child(7) { animation-delay:   -7s; }
+  .fv-slideshow .fv-slide:nth-child(8) { animation-delay:  -3.5s; }
 </style>
+
+
+<!-- NAVBAR -->
+<nav class="fv-nav">
+  <div class="fv-nav-inner">
+    <a href="/" class="fv-nav-logo">
+      <img src="https://frailejon-ii.vercel.app/Lromana%20con%20COLOR)%20(1).png" alt="La Romana Real Estate">
+    </a>
+    <ul class="fv-nav-links">
+      <li><a href="#">Proyectos ▾</a></li>
+      <li><a href="#">Propiedades</a></li>
+      <li><a href="#">Agentes</a></li>
+      <li><a href="#">Sobre Nosotros</a></li>
+      <li><a href="#">Contacto</a></li>
+      <li><a href="#contacto" class="fv-nav-cta">Empezar Búsqueda</a></li>
+    </ul>
+  </div>
+</nav>
 
 
 <!-- HERO -->
@@ -168,7 +200,7 @@
 
 
 <!-- INVERSIÓN — edge to edge -->
-<div class="fv-bg1" style="margin-top:5rem;">
+<div class="fv-bg1">
   <div class="fv-split">
     <div class="fv-split-img">
       <img src="https://frailejon-ii.vercel.app/vista%20aerea.png" alt="Vista Aérea Altos de Frailejón" loading="lazy">
@@ -183,30 +215,36 @@
 
 
 <!-- ¿POR QUÉ ELEGIR? -->
-<div class="fv-bg2" style="padding:6rem 0;">
-  <div class="fv-grid2" style="width:100%;">
-    <div style="padding:0 5rem;">
+<div class="fv-section fv-bg2">
+  <div class="fv-container fv-grid2">
+    <div>
       <span class="fv-label">Ventajas</span>
       <h2 class="fv-h2">¿Por Qué Elegir Frailejón Village?</h2>
       <p class="fv-muted">Descubre las razones que hacen de Frailejón Village el lugar ideal para vivir o invertir.</p>
     </div>
-    <div class="fv-razones" style="padding:0 5rem;">
+    <div class="fv-razones">
       <div class="fv-razon">
-        <div class="fv-razon-icon">📍</div>
+        <div class="fv-razon-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
         <div>
           <h3>Ubicación Estratégica</h3>
           <p>A solo 6 minutos del Aeropuerto Internacional de La Romana y a 3 minutos de arenas blancas y aguas turquesas. Casa de Campo Resort &amp; Villas a 6 minutos y Playa Dominicus Bayahibe a 19 minutos.</p>
         </div>
       </div>
       <div class="fv-razon">
-        <div class="fv-razon-icon">⛳</div>
+        <div class="fv-razon-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
         <div>
           <h3>Campo de Golf Pete Dye</h3>
           <p>A 10 minutos, disfruta de un campo de golf de más de 7,300 m con 9 ó 18 hoyos en La Estancia, diseñado por Pete Dye — uno de los arquitectos de golf más reconocidos del mundo — con vistas al majestuoso Río Chavón.</p>
         </div>
       </div>
       <div class="fv-razon">
-        <div class="fv-razon-icon">📈</div>
+        <div class="fv-razon-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+        </div>
         <div>
           <h3>Inversión Inteligente</h3>
           <p>Con modelo de negocio condominio, Frailejón Village asegura retorno de inversión a corto, mediano y largo plazo, respaldado por la alta demanda turística de La Romana y las amenidades de clase mundial de La Estancia.</p>
@@ -241,12 +279,12 @@
 
 
 <!-- MODELOS -->
-<div id="modelos" class="fv-bg2" style="padding-top:6rem;padding-bottom:10rem;">
-  <div>
-    <div class="fv-title-center" style="padding:0 1.5rem;max-width:1280px;margin:0 auto 3rem;">
+<div id="modelos" class="fv-section fv-bg2">
+  <div class="fv-container">
+    <div class="fv-title-center">
       <span class="fv-label">Catálogo</span>
-      <h2 class="fv-h2" style="font-size:clamp(3rem,7vw,5rem);">Modelos del proyecto</h2>
-      <p class="fv-muted" style="max-width:500px;margin:0 auto;">Villas con estilos y configuraciones variadas que se adaptan a tus necesidades, priorizando elegancia y confort.</p>
+      <h2 class="fv-h2">Modelos del proyecto</h2>
+      <p class="fv-muted" style="max-width:500px;margin:0 auto;">Apartamentos con estilos y configuraciones variadas que se adaptan a tus necesidades, priorizando elegancia y confort.</p>
     </div>
     <div class="fv-grid3">
 
@@ -301,11 +339,11 @@
 
 
 <!-- PLAN DE PAGO -->
-<div class="fv-bg1" style="padding:6rem 0;">
-  <div>
-    <div class="fv-title-center" style="padding:0 1.5rem;max-width:1280px;margin:0 auto 3rem;">
+<div class="fv-section fv-bg1">
+  <div class="fv-container">
+    <div class="fv-title-center">
       <span class="fv-label">Financiamiento</span>
-      <h2 class="fv-h2" style="font-size:clamp(3rem,7vw,5rem);">Plan de Pago</h2>
+      <h2 class="fv-h2">Plan de Pago</h2>
       <p class="fv-muted">¡Reserva ahora y paga el inicial como tu bolsillo te lo permita!</p>
     </div>
     <div class="fv-plan-grid">
@@ -339,14 +377,12 @@
 </div>
 
 
-
-
 <!-- ATRACTIVOS -->
-<div class="fv-bg1" style="padding:6rem 0;">
-  <div>
-    <div class="fv-title-center" style="padding:0 1.5rem;max-width:1280px;margin:0 auto 3rem;">
+<div class="fv-section fv-bg1">
+  <div class="fv-container">
+    <div class="fv-title-center">
       <span class="fv-label">Alrededor</span>
-      <h2 class="fv-h2" style="font-size:clamp(3rem,7vw,5rem);">Atractivos Cerca de ti</h2>
+      <h2 class="fv-h2">Atractivos Cerca de ti</h2>
     </div>
     <div class="fv-grid3">
       <div class="fv-atractivo">
@@ -370,11 +406,11 @@
 
 
 <!-- PROXIMIDADES -->
-<div class="fv-bg2" style="padding:6rem 0;">
-  <div>
-    <div class="fv-title-center" style="padding:0 1.5rem;max-width:1280px;margin:0 auto 3rem;">
+<div class="fv-section fv-bg2">
+  <div class="fv-container">
+    <div class="fv-title-center">
       <span class="fv-label">Conectividad</span>
-      <h2 class="fv-h2" style="font-size:clamp(3rem,7vw,5rem);">A Minutos de Todo</h2>
+      <h2 class="fv-h2">A Minutos de Todo</h2>
     </div>
     <div class="fv-grid4">
       <div class="fv-prox-card"><span class="tiempo">6 min</span><span class="lugar">Aeropuerto Int'l La Romana</span></div>
@@ -398,8 +434,8 @@
       <h2 class="fv-h2">Agenda tu Visita a Frailejón Village</h2>
       <p class="fv-muted" style="margin-bottom:2rem;">Descubre en persona el lujo y la exclusividad que ofrecemos. Completa el formulario y programa una cita con nuestro equipo.</p>
       <div class="fv-contact-info">
-        <div class="fv-contact-row"><span class="fv-contact-icon">📞</span><span>+1 (484) 473-1113</span></div>
-        <div class="fv-contact-row"><span class="fv-contact-icon">✉</span><span>info@lromanarealestate.com</span></div>
+        <div class="fv-contact-row"><span class="fv-contact-icon">📞</span><span>(829) 222-2484</span></div>
+        <div class="fv-contact-row"><span class="fv-contact-icon">✉</span><span>info@romanarealestate.com</span></div>
         <div class="fv-contact-row"><span class="fv-contact-icon">📌</span><span>Reparto Torres Calle 4ta #5. La Romana. República Dominicana.</span></div>
       </div>
       <div class="fv-form">
@@ -411,11 +447,14 @@
       </div>
     </div>
     <div class="fv-slideshow" id="fv-slideshow">
-      <div class="fv-slide"><img src="https://frailejon-ii.vercel.app/render%201.png" alt="Render Altos de Frailejón" loading="lazy"></div>
+      <div class="fv-slide active"><img src="https://frailejon-ii.vercel.app/render%201.png" alt="Render Altos de Frailejón" loading="lazy"></div>
       <div class="fv-slide"><img src="https://frailejon-ii.vercel.app/atardecer.png" alt="Atardecer Altos de Frailejón" loading="lazy"></div>
       <div class="fv-slide"><img src="https://frailejon-ii.vercel.app/Frailejon%208.png" alt="Frailejón Village" loading="lazy"></div>
       <div class="fv-slide"><img src="https://frailejon-ii.vercel.app/la%20estancia.jpeg" alt="La Estancia" loading="lazy"></div>
       <div class="fv-slide"><img src="https://frailejon-ii.vercel.app/la%20estancia%202.0.jpeg" alt="La Estancia 2.0" loading="lazy"></div>
+      <div class="fv-slide"><img src="https://frailejon-ii.vercel.app/capitan%20kid.jpeg" alt="Capitan Kid" loading="lazy"></div>
+      <div class="fv-slide"><img src="https://frailejon-ii.vercel.app/Hilton.jpeg" alt="Hotel Hilton" loading="lazy"></div>
+      <div class="fv-slide"><img src="https://frailejon-ii.vercel.app/aeropuerto.jpeg" alt="Aeropuerto" loading="lazy"></div>
     </div>
   </div>
 </div>

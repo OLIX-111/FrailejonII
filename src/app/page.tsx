@@ -42,19 +42,37 @@ const atractivos = [
   { nombre: "Aeropuerto",   tipo: "Aeropuerto (a 6 minutos)",   img: "/aeropuerto.jpeg" },
 ];
 
+const razonIcons = {
+  pin: (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+    </svg>
+  ),
+  star: (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+    </svg>
+  ),
+  trending: (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+      <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
+    </svg>
+  ),
+};
+
 const razones = [
   {
-    icon: "📍",
+    icon: razonIcons.pin,
     titulo: "Ubicación Estratégica",
     texto: "A solo 6 minutos del Aeropuerto Internacional de La Romana y a 3 minutos de arenas blancas y aguas turquesas. Casa de Campo Resort & Villas a 6 minutos y Playa Dominicus Bayahibe a 19 minutos.",
   },
   {
-    icon: "⛳",
+    icon: razonIcons.star,
     titulo: "Campo de Golf Pete Dye",
     texto: "A 10 minutos, disfruta de un campo de golf de más de 7,300 m con 9 ó 18 hoyos en La Estancia, diseñado por Pete Dye — uno de los arquitectos de golf más reconocidos del mundo — con vistas al majestuoso Río Chavón.",
   },
   {
-    icon: "📈",
+    icon: razonIcons.trending,
     titulo: "Inversión Inteligente",
     texto: "Con modelo de negocio condominio, Frailejón Village asegura retorno de inversión a corto, mediano y largo plazo, respaldado por la alta demanda turística de La Romana y las amenidades de clase mundial de La Estancia.",
   },
