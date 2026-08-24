@@ -8,7 +8,6 @@ const proyectos = [
   { label: "Frailejón Village",      href: "https://frailejon-village.vercel.app/" },
   { label: "Costa Mar",              href: "https://costa-mar-1.vercel.app/" },
   { label: "Stone Towers III",       href: "https://stonetowers-iii.vercel.app/" },
-  { label: "Portal de Propiedades",  href: "https://propiedades.lromanarealestate.com/" },
 ];
 
 export default function Navbar() {
