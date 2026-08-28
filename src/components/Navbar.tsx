@@ -21,7 +21,8 @@ export default function Navbar() {
             alt="La Romana Real Estate"
             width={220}
             height={100}
-            className="object-contain brightness-0 invert"
+            className="object-contain"
+            style={{ filter: 'brightness(0) invert(1)' }}
             priority
           />
         </Link>
