@@ -14,15 +14,15 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0d0d0d] shadow-md">
-      <div className="relative max-w-7xl mx-auto px-6 h-[65px] flex items-center justify-between">
+      <div className="relative max-w-7xl mx-auto px-6 h-[80px] flex items-center justify-between">
 
         {/* Logo — izquierda */}
         <Link href="/" className="flex items-center">
           <Image
             src="/NuevoLromana Blanco (1).png"
             alt="La Romana Real Estate"
-            width={160}
-            height={50}
+            width={190}
+            height={65}
             className="object-contain"
             priority
           />
