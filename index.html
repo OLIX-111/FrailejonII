@@ -2,9 +2,10 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   .fv-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: #0d0d0d; box-shadow: 0 1px 4px rgba(0,0,0,0.4); }
-  .fv-nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; height: 110px; display: flex; align-items: center; justify-content: space-between; }
+  .fv-nav-inner { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; height: 110px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
   .fv-nav-logo img { height: 100px; width: auto; display: block; object-fit: contain; filter: brightness(0) invert(1); }
-  .fv-nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; }
+  .fv-nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; justify-content: center; }
+  .fv-nav-cta-wrap { display: flex; justify-content: flex-end; }
   .fv-nav-links > li { position: relative; }
   .fv-nav-links a { font-size: 0.875rem; font-weight: 500; color: #d1d5db; text-decoration: none; white-space: nowrap; }
   .fv-nav-links a:hover { color: #2563eb; }
@@ -156,8 +157,10 @@
       <li><a href="https://lromanarealestate.com/agentes" target="_blank">Agentes</a></li>
       <li><a href="https://www.lromanarealestate.com/about" target="_blank">Sobre Nosotros</a></li>
       <li><a href="#contacto">Contacto</a></li>
-      <li><a href="#contacto" class="fv-nav-cta">Empezar Búsqueda</a></li>
     </ul>
+    <div class="fv-nav-cta-wrap">
+      <a href="#contacto" class="fv-nav-cta">Empezar Búsqueda</a>
+    </div>
   </div>
 </nav>
 

@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0d0d0d] shadow-md">
-      <div className="max-w-7xl mx-auto px-6 h-[110px] flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-[110px] grid items-center" style={{ gridTemplateColumns: '1fr auto 1fr' }}>
         <Link href="/" className="flex items-center">
           <Image
             src="/Lromana con COLOR) (1).png"
@@ -28,7 +28,6 @@ export default function Navbar() {
         </Link>
 
         <ul className="hidden md:flex items-center gap-7">
-          {/* Proyectos dropdown */}
           <li
             className="relative"
             onMouseEnter={() => setOpen(true)}
@@ -89,15 +88,16 @@ export default function Navbar() {
               Contacto
             </Link>
           </li>
-          <li>
-            <Link
-              href="#contacto"
-              className="bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-blue-700 transition-colors"
-            >
-              Empezar Búsqueda
-            </Link>
-          </li>
         </ul>
+
+        <div className="hidden md:flex justify-end">
+          <Link
+            href="#contacto"
+            className="bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-blue-700 transition-colors"
+          >
+            Empezar Búsqueda
+          </Link>
+        </div>
       </div>
     </nav>
   );
