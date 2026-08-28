@@ -13,7 +13,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0d0d0d] shadow-md">
       <div className="max-w-7xl mx-auto px-6 h-[110px] flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
@@ -33,18 +33,18 @@ export default function Navbar() {
             onMouseEnter={() => setOpen(true)}
             onMouseLeave={() => setOpen(false)}
           >
-            <span className="text-sm font-medium text-gray-700 hover:text-blue-600 cursor-pointer transition-colors">
+            <span className="text-sm font-medium text-gray-300 hover:text-blue-400 cursor-pointer transition-colors">
               Proyectos ▾
             </span>
             {open && (
-              <div className="absolute top-full left-0 mt-3 bg-white shadow-lg rounded-xl py-2 min-w-[210px] z-50">
+              <div className="absolute top-full left-0 mt-3 bg-[#1a1a1a] shadow-lg rounded-xl py-2 min-w-[210px] z-50">
                 {proyectos.map((p) => (
                   <a
                     key={p.href}
                     href={p.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                    className="block px-4 py-2.5 text-sm text-gray-300 hover:bg-[#2a2a2a] hover:text-blue-400 transition-colors"
                   >
                     {p.label}
                   </a>
@@ -58,7 +58,7 @@ export default function Navbar() {
               href="https://propiedades.lromanarealestate.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+              className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors"
             >
               Propiedades
             </a>
@@ -68,7 +68,7 @@ export default function Navbar() {
               href="https://lromanarealestate.com/agentes"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+              className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors"
             >
               Agentes
             </a>
@@ -78,13 +78,13 @@ export default function Navbar() {
               href="https://www.lromanarealestate.com/about"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+              className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors"
             >
               Sobre Nosotros
             </a>
           </li>
           <li>
-            <Link href="#contacto" className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+            <Link href="#contacto" className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors">
               Contacto
             </Link>
           </li>
