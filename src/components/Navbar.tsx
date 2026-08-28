@@ -14,7 +14,9 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0d0d0d] shadow-md">
-      <div className="max-w-7xl mx-auto px-6 h-[110px] grid items-center" style={{ gridTemplateColumns: '1fr auto 1fr' }}>
+      <div className="relative max-w-7xl mx-auto px-6 h-[110px] flex items-center justify-between">
+
+        {/* Logo — izquierda */}
         <Link href="/" className="flex items-center">
           <Image
             src="/Lromana con COLOR) (1).png"
@@ -27,7 +29,11 @@ export default function Navbar() {
           />
         </Link>
 
-        <ul className="hidden md:flex items-center gap-7">
+        {/* Links — centrados absolutamente */}
+        <ul
+          className="hidden md:flex items-center gap-7"
+          style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}
+        >
           <li
             className="relative"
             onMouseEnter={() => setOpen(true)}
@@ -54,32 +60,20 @@ export default function Navbar() {
           </li>
 
           <li>
-            <a
-              href="https://propiedades.lromanarealestate.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors"
-            >
+            <a href="https://propiedades.lromanarealestate.com/" target="_blank" rel="noopener noreferrer"
+              className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors">
               Propiedades
             </a>
           </li>
           <li>
-            <a
-              href="https://lromanarealestate.com/agentes"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors"
-            >
+            <a href="https://lromanarealestate.com/agentes" target="_blank" rel="noopener noreferrer"
+              className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors">
               Agentes
             </a>
           </li>
           <li>
-            <a
-              href="https://www.lromanarealestate.com/about"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors"
-            >
+            <a href="https://www.lromanarealestate.com/about" target="_blank" rel="noopener noreferrer"
+              className="text-sm font-medium text-gray-300 hover:text-blue-400 transition-colors">
               Sobre Nosotros
             </a>
           </li>
@@ -90,7 +84,8 @@ export default function Navbar() {
           </li>
         </ul>
 
-        <div className="hidden md:flex justify-end">
+        {/* Botón — derecha */}
+        <div className="hidden md:flex">
           <Link
             href="#contacto"
             className="bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-blue-700 transition-colors"
@@ -98,6 +93,7 @@ export default function Navbar() {
             Empezar Búsqueda
           </Link>
         </div>
+
       </div>
     </nav>
   );
