@@ -19,12 +19,11 @@ export default function Navbar() {
         {/* Logo — izquierda */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/Lromana con COLOR) (1).png"
+            src="/NuevoLromana Blanco (1).png"
             alt="La Romana Real Estate"
             width={220}
             height={100}
             className="object-contain"
-            style={{ filter: 'brightness(0) invert(1)' }}
             priority
           />
         </Link>
